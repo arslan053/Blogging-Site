@@ -1,6 +1,72 @@
 @import 'bootstrap/dist/css/bootstrap';
 .navbar {
 
-    background-color: #FDF6EA !important;
+    background-color: black !important;
     
     }
+.nav-link{
+    color:white !important;
+}
+#logo{
+    float:left;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    // text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #F18F01 ; /* Customize the color #EEE82C*/
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow */   
+    margin-top: 0;
+    margin-bottom: 0; 
+
+}
+#search-hover:hover{
+    background-color:#F18F01 !important; 
+    box-shadow: 0 0 3px #F18F01;
+    border-color: #F18F01 !important;
+}
+
+.btn-outline-success {
+    color: #F18F01;
+    border-color: #F18F01;
+}
+
+#home-container{
+    margin-top: 25px;
+}
+.jumbotron{
+    background-image: asset-url('blog4.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    // background-color: rgba(0, 0, 0, 0.3);
+    height: 425px;
+}
+#hm-btn{
+    background-color: #F18F01;
+    border: none;
+    color: black;
+}
+html,
+body {
+    height: 100%;
+  }
+  
+  #page-content {
+    flex: 1 0 auto;
+    background-color: lightgrey;
+  }
+  #sticky-footer{
+    flex-shrink: none;
+  }
+  
+  .text-warning{
+    color: #F18F01;
+    font-size: 30;
+    font-weight: bold;
+  }
+  .card-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }

@@ -1,24 +1,53 @@
-<% if @article.errors.any?  %>
-        <h3>Cannot create: Errors</h3>
-        <ul>
-        <% @article.errors.full_messages.each do |msg|%>
-           <li> <%= msg %></li>
-        <% end %>
-        </ul> 
+<div class="container"> 
+  <%= render 'shared/error' %>
+  <h4 class="mb-sm-4 ml-sm-2">Article Detail</h4>
+  <div class="staric  ">
+    <%= form_with(model: @article, class:"form-margin shadow p-3 mb-5 bg-light rounded " ,local: true) do |f| %>
+      <div class="form-group row">
+      <div class="col-sm-2">
+        <%= f.label :title, class: "col-form-label" %>
+        </div>
+        <div class="col-sm-10">
+          <%= f.text_field :title, class: "form-control " %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-2">
+          <%= f.label :description, class: " col-form-label" %>
+        </div>
+        <div class="col-sm-10">
+          <%= f.text_area :description, rows: 10, class: "form-control " %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-9 "></div>
+        <%= f.submit class: "btn btn-lg btn-outline-dark ml-sm-5 mt-sm-4"%><br>
+      </div>
     <% end %>
-<%= form_with(model: @article, local: true) do |f| %> <!--#Post request http not remote ,form_with by deafault http -->
-    <p>
-        <%= f.label :title %></br>
-        <%= f.text_field :title%>
-    </p>
-    <p>
-        <%= f.label :description %> </br>
-        <%= f.text_area :description%>
-    </p>
-    <p>
-        <%= f.submit %> </br>
-    </p>        
+    <div class="text-center mb-sm-3">
+      <%=link_to "[Return to articles]", articles_path, class:"mt-5" %>
+    </div>
+  </section>
+</div>
+
+
+
+
+
+    <!-- 
+    <div class ="row ">
+    <div class="col-2"></div>
+
+    <div class="col-8 ml-sm-2 ml-md-4 mt-sm-3 form-check">
+    <input class="form-check-input" type="checkbox" id="exampleCheckbox">
+    <label class="form-check-label" for="exampleCheckbox">
+        In order to complete your order we may need to contact you, </br>
+        please check here to agree to this. We might also contact you 
+        </br>with occasional updates and offers.
+        <small class="ml-ms-2 " >
+            <li>You can unsubscribe at any time by visiting 'My Account' </li>
+            <li>Subject to our Privacy Policy</li>
+        </small> 
+    </label>
+  </div> -->
  
-
-
-    <% end %>

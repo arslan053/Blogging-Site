@@ -70,3 +70,16 @@ body {
     justify-content: space-between;
     align-items: center;
    }
+
+   .form-margin{
+    padding: 2% 2% !important;
+    border-radius: 12px !important;
+   }
+
+   .staric label::after{
+    content: " *";
+    color: red;
+  }
+
+
+  

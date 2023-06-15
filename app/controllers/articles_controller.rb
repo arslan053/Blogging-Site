@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
     before_action :set_article, only: [:edit, :show, :destroy, :update]
     def new
-        @article=Article.new #just for empty instance for error meassages showing for create
+        @article=Article.new #also useful for empty instance for error meassages showing for create
 
     end
  

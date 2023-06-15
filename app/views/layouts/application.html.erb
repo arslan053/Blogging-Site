@@ -9,13 +9,14 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <%= render 'layouts/flash_msg' %>
-    <body class="d-flex flex-column">
 
-     <%= render "layouts/navbar.html.erb" %>
-     
-
-
+  <body class="d-flex flex-column">
+    <%= render "layouts/navbar.html.erb" %>
+    <div id="page-content">
+    <%= render 'layouts/flash_msg' %>
     <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
+
 </html>

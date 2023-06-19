@@ -2,7 +2,6 @@ class ArticlesController < ApplicationController
     before_action :set_article, only: [:edit, :show, :destroy, :update]
     def new
         @article=Article.new #also useful for empty instance for error meassages showing for create
-
     end
  
     def edit
@@ -19,6 +18,8 @@ class ArticlesController < ApplicationController
         #@article=Article.new(params[:given_values]) #Must white list them from web
 
         @article=Article.new(article_params)
+        @article.user_id=7
+
         #require the top level key of article and permit title and description from there to create article instance variable
         # render plain: @article
         # render plain:@article.inspect
@@ -36,7 +37,7 @@ class ArticlesController < ApplicationController
     end
 
     def update
-        
+        @article.user_id=User.first
         if @article.update(article_params)
             redirect_to @article           #article_path(@article)
             flash[:notice]="Article Updated Successfully"

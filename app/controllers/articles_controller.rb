@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
     before_action :set_article, only: [:edit, :show, :destroy, :update]
     def new
         @article=Article.new #also useful for empty instance for error meassages showing for create
+        @article.user_id=User.first.id
     end
  
     def edit
@@ -11,7 +12,7 @@ class ArticlesController < ApplicationController
     end
 
     def index
-        @articles=Article.all
+        @article=Article.all
     end
 
     def create
@@ -37,7 +38,6 @@ class ArticlesController < ApplicationController
     end
 
     def update
-        @article.user_id=User.first
         if @article.update(article_params)
             redirect_to @article           #article_path(@article)
             flash[:notice]="Article Updated Successfully"

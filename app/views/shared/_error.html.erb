@@ -1,6 +1,6 @@
-<% if obj.errors.any? %>
+<p></p><% if obj.errors.any? %>
 <div class="alert alert-danger alert-dismissible fade show "  role="alert">
-  <h5 class="alert-heading">Cannot create: Errors</h5>
+  <h5 class="alert-heading"><%=obj.class.name %> cannot be created <p>Errors:</p></h5>
   <ul>
     <% obj.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>

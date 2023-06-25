@@ -1,2 +1,6 @@
-<h1 class="text-center mt-4"> <%=@user.username%> </h1>
+<h1 class="text-center mt-4"> <%=@user.username.strip%>'s Profile </h1>
+<div class="text-center mt-4">
+    <%= link_to "edit your profile", edit_user_path(@user), class:"btn btn-outline-success my-2 my-sm-0", id:"search-hover"%>
+</div>
+<h5 class="text-center mt-4"> <%=@user.username.strip %>'s Articles </h4>
 <%= render 'articles/articles', obj: @user.articles %>

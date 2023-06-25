@@ -31,7 +31,7 @@
 
       <div class="row">
         <div class="col-9 "></div>
-        <%= f.submit ' Sign up', class: "btn btn-lg btn-outline-dark ml-sm-5 mt-sm-4"%><br>
+        <%= f.submit(@user.new_record? ? ' Sign up' : 'Update account', class: "btn btn-lg btn-outline-dark ml-sm-5 mt-sm-4") %><br>
       </div>
     <% end %>
     <div class="text-center mb-sm-3">

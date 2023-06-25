@@ -2,25 +2,23 @@ class ArticlesController < ApplicationController
     before_action :set_article, only: [:edit, :show, :destroy, :update]
     def new
         @article=Article.new #also useful for empty instance for error meassages showing for create
-        @article.user_id=User.first.id
     end
  
     def edit
-        
-    end
+    end 
+
     def show 
     end
 
     def index
-        @article=Article.all
+        @articles=Article.all
     end
 
     def create
         #@article=Article.new(params[:given_values]) #Must white list them from web
 
         @article=Article.new(article_params)
-        @article.user_id=7
-
+        @article.user_id=User.last.id
         #require the top level key of article and permit title and description from there to create article instance variable
         # render plain: @article
         # render plain:@article.inspect
@@ -57,7 +55,7 @@ private
 def set_article
     @article=Article.find(params[:id])
 end
+
 def  article_params
     params.require(:article).permit(:title, :description)
-
 end
